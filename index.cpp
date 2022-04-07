@@ -7,17 +7,34 @@
 
 using namespace std;
 
+
+int init()
+{
+    Professor prof0("profid1","profpassword1","profname1");
+    profList.push_back(prof0);
+
+    Professor prof1("profid2","profpassword2","profname2");
+    profList.push_back(prof1);
+
+    Professor prof2("profid3","profpassword3","profname3");
+    profList.push_back(prof2);
+
+    Student stud0("studid1","studpassword1","studname1");
+    studList.push_back(stud0);
+    
+    Librarian libr0("librid1","librpassword1","librname1");
+    librList.push_back(libr0);
+
+    Librarian libr1("librid2","librpassword2","librname2");
+    librList.push_back(libr1);
+
+    return 0;
+}
+
 int main()
 {
-    Librarian temp("i", "p", "librName");
-    librList.push_back(temp);
-
-    Student temp1("i", "p", "librName");
-    studList.push_back(temp1);
-
-    //cout << "User created successfully\n";
+    init();
     menu();
-    //studList[0].calculateFine();
 
     return 0;
 }

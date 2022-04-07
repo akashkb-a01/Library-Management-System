@@ -35,20 +35,7 @@ public:
         Password = password;
     }
 
-    // User(string id, string name, string password);
-    // ~User();
 };
-
-// User::User(string id, string name, string password)
-// {
-//     Name = name;
-//     Id = id;
-//     Password = password;
-// }
-
-// User::~User(void)
-// {
-// }
 
 const int monthDays[12] = { 31, 59, 90, 120, 151, 181, 212, 243,
 273, 304, 334, 365 };
@@ -186,7 +173,10 @@ class Student: public User {
             predate[1] = stoi(pm);
             predate[0] = stoi(pd);
             predate[2] = stoi(py);
+            if(userBookList.size() == 0) return 0;
+            
             for(auto i=0; i < userBookList.size(); i++){
+                cout << "k";
                 string nd = userBookList[i].getDueDate();
                 char *dm = strtok(s,"/") ; 
                 char *dd = strtok(NULL,"/") ;
@@ -197,11 +187,9 @@ class Student: public User {
                 duedate[2] = stoi(dy);
                 int noOfDays = countNoOfDays(duedate,predate);
                 if(noOfDays > 0) ans += (noOfDays * 2);
-                //cout << dm << " " << dd << " " << dy << '\n';
 
             }
             cout << "Total fine is: " << ans << "\n\n";
-            //cout << pm << " " << pd << " " << py << '\n';
             
             return ans;
         }
@@ -229,7 +217,7 @@ class Student: public User {
         void issueBook(string dat){
             if(userBookList.size() < 5)
             {system("clear");
-            cout << "To issue book find it by its \n\n";
+            cout << "To issue a book find it by its \n\n";
 	        cout << "1. Title\n";
 	        cout << "2. ISBN\n";
 	        cout << "Enter your choice (1-2): ";
@@ -276,31 +264,3 @@ class Librarian: public User {
 
         ~Librarian(void){};
 };
-
-// vector <Professor> profList;
-// vector <Student> studList;
-// vector <Librarian> librList;
-
-
-// int init()
-// {
-//     Professor prof0("profid1","profpassword1","profname1");
-//     profList.push_back(prof0);
-
-//     Professor prof1("profid2","profpassword2","profname2");
-//     profList.push_back(prof1);
-
-//     Professor prof2("profid3","profpassword3","profname3");
-//     profList.push_back(prof2);
-
-//     Student stud0("studid1","studpassword1","studname1");
-//     studList.push_back(stud0);
-    
-//     Librarian libr0("librid1","librpassword1","librname1");
-//     librList.push_back(libr0);
-
-//     Librarian libr1("librid2","librpassword2","librname2");
-//     librList.push_back(libr1);
-
-//     return 0;
-// }

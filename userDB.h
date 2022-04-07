@@ -54,24 +54,6 @@ void addStud(){
     cout << "User created successfully\n";
 }
 
-// void addLibr(){
-//     string id, password, name;
-//     cout << "Please enter your id: ";
-//     cin >> id;
-//     while(idExists(id, librList)){
-//         cout << "\nId is already in use.\nPlease enter another id: ";
-//         cin >> id;
-//     }
-//     cout << "\nPlease enter your name: ";
-//     cin >> name;
-//     cout << "\nPlease enter your password: ";
-//     cin >> password;
-
-//     Librarian temp(id, password, name);
-//     librList.push_back(temp);
-//     cout << "User created successfully\n";
-// }
-
 void listStud(){
     system("clear");
     cout << "List of students\n\n";

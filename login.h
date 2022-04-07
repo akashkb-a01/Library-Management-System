@@ -79,37 +79,6 @@ void librLogin(){
     librLogin();
 }
 
-
-// void registr(){
-//     system("clear");
-//     cout << "Welcome to Library Management System \nPlease select your role from below to register \n\n1. Professor \n2. Student \n3. Librarian\n4. Go back to main menu \nPlease enter your choice (1-4): ";
-//     int role;
-//     cin >> role;
-//     while(role < 1 || role > 4){
-//         cout << "\nThe entered choice is not between 1 and 3.\nPlease enter your choice again: ";
-//         cin >> role;
-//     }
-    
-//     switch (role)
-//     {
-//     case 1: addProf(); menu();
-//         break;
-
-//     case 2: addStud(); menu();
-//         break;
-
-//     case 3: addLibr(); menu();
-//         break;
-
-//     case 4: menu();
-//         break;
-
-//     default: cout << "Please select correct role\n";
-//         break;
-//     }
-//     return ;
-// }
-
 int login()
 {
     system("clear");
@@ -151,9 +120,6 @@ void menu(){
     {
     case 1: login();
         break;
-
-    // case 2: registr();
-    //     break;
 
     case 2: return ;
         break;
@@ -219,8 +185,7 @@ void librMenu()
     
     case 8: searchByISBN(); cout << "Enter y to go back to previous menu: "; cin >> temp; if(temp == 'y')librMenu();
         break;
-    
-    
+        
     case 9: searchUserbyId(studList); cout << "Enter y to go back to previous menu: "; cin >> temp; if(temp == 'y')librMenu();
         break;
 
@@ -262,11 +227,12 @@ void userMenu(vector <T> lis, int inde){
     cout << "\nPlease select a task from below options \n";
     cout << "\n1. List of books ";
     cout << "\n2. Issued books";
-    cout << "\n3. Logout ";
-    cout << "\nPlease enter your choice (1-3): ";
+    cout << "\n3. Calculate Fine amount";
+    cout << "\n4. Logout ";
+    cout << "\nPlease enter your choice (1-4): ";
     int task;
     cin >> task;
-    while(task < 1 || task > 3){
+    while(task < 1 || task > 4){
         cout << "Entered task is not between given range \nPlease enter task again: ";
         cin >> task;
     }
@@ -283,7 +249,14 @@ void userMenu(vector <T> lis, int inde){
         if(temp == 'y')userMenu(lis, inde);
         break;
 
-    case 3: return menu();
+    case 3: 
+        lis[inde].calculateFine(); 
+        cout << "Enter y to go back to previous menu: "; 
+        cin >> temp; 
+        if(temp == 'y')userMenu(lis, inde);
+        break;
+
+    case 4: return menu();
 
     default: cout << "\n";
         break;
