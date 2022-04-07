@@ -97,7 +97,7 @@ class Professor: public User {
             return ans;
         }
 
-        void setFineAmt(int amt){
+        void setFineAmt(){
             Fine_amount = calculateFine();
         }
 
@@ -147,7 +147,7 @@ class Professor: public User {
             setId(id);
             setPassword(password);
             setName(name);
-            setFineAmt(0);
+            setFineAmt();
         }
 };
 
@@ -173,7 +173,7 @@ class Student: public User {
             predate[1] = stoi(pm);
             predate[0] = stoi(pd);
             predate[2] = stoi(py);
-            if(userBookList.size() == 0) return 0;
+            //if(userBookList.size() == 0) return 0;
             
             for(auto i=0; i < userBookList.size(); i++){
                 cout << "k";
@@ -194,7 +194,7 @@ class Student: public User {
             return ans;
         }
 
-        void setFineAmt(int amt){
+        void setFineAmt(){
             Fine_amount = calculateFine();
         }
 
@@ -249,7 +249,7 @@ class Student: public User {
             setId(id);
             setPassword(password);
             setName(name);
-            setFineAmt(0);
+            setFineAmt();
         }
     
 };
