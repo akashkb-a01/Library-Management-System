@@ -69,6 +69,7 @@ class Professor: public User {
         }
         
         int calculateFine(){
+            system("clear");
             int ans = 0;
             char s[11];
             time_t t = time(0);
@@ -162,6 +163,7 @@ class Student: public User {
         }
 
         int calculateFine(){
+            system("clear");
             int ans = 0;
             char s[11];
             time_t t = time(0);
@@ -173,7 +175,6 @@ class Student: public User {
             predate[1] = stoi(pm);
             predate[0] = stoi(pd);
             predate[2] = stoi(py);
-            //if(userBookList.size() == 0) return 0;
             
             for(auto i=0; i < userBookList.size(); i++){
                 cout << "k";
