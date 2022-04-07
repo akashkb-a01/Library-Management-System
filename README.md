@@ -17,3 +17,4 @@ For Librarian \
 Id: `librid1`\
 Password: `librpassword1`
 ### Librarian can add more Students and Professors after logging in
+Librarian can issue books to the users. Whereas users can see the list of the books they have issued in their name.
