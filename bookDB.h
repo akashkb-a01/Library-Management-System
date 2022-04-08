@@ -194,6 +194,6 @@ void deleteBook(){
 		break;
 	}
 	list_of_books.erase(list_of_books.begin() + inde);
-	cout << "\n\n Deleted the above book!!!|n";
+	cout << "\n\nDeleted the above book!!!\n";
 	return;
 }

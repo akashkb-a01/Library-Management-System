@@ -202,7 +202,8 @@ void deleteUser(){
     system("clear");
     int inde = searchUserbyId(profList);
     profList[inde].clearFine();
-    if(inde != -1)profList.erase(profList.begin() + inde);
+    if(inde != -1){profList.erase(profList.begin() + inde);
+    cout << "\n\nDeleted the above Professor\n";}
     else deleteUser();
 }
 
@@ -210,6 +211,7 @@ void deleteStud(){
     system("clear");
     int inde = searchUserbyId(studList);
     studList[inde].clearFine();
-    if(inde != -1)studList.erase(studList.begin() + inde);
+    if(inde != -1){studList.erase(studList.begin() + inde);
+    cout << "\n\nDeleted the above Student\n";}
     else deleteStud();
 }
