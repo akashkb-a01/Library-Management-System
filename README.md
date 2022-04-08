@@ -42,3 +42,5 @@ Whereas normal users have access to these following functions
 2. Issued books
 3. Calculate Fine amount
 4. Logout 
+
+Librarian can issue book to student or clear dues using `Update Student details`.
