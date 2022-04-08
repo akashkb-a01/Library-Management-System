@@ -15,7 +15,9 @@ Id: `studid1`\
 Password: `studpassword1`\
 For Librarian \
 Id: `librid1`\
-Password: `librpassword1`
+Password: `librpassword1` \
+Id: `librid2`\
+Password: `librpassword2`
 ### Librarian can add more Students and Professors after logging in
 Librarian can issue books to the users. Whereas users can see the list of the books they have issued in their name.\
 Librarian can do following things
@@ -43,4 +45,4 @@ Whereas normal users have access to these following functions
 3. Calculate Fine amount
 4. Logout 
 
-Librarian can issue book to student or clear dues using `Update Student details`, similar action can be done for Professor using option 13. Students can only issue 5 books whereas, there is no such limit on the Professor.
+Librarian can issue book to student or clear dues using `Update Student details`, similar action can be done for Professor using option 13. Students can only issue 5 books whereas, there is no such limit for the Professor.
