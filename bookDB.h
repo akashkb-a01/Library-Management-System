@@ -83,6 +83,10 @@ void updateBook(){
 	int choi, inde;
 	inde = -1;
 	cin >> choi;
+	while(choi < 1 || choi > 2){
+        cout << "\nThe entered preference is not between 1 and 2.\nPlease enter your preference again: ";
+        cin >> choi;
+    }
 	switch (choi)
 	{
 	case 1: inde = searchByTitle();
@@ -174,6 +178,10 @@ void deleteBook(){
 	int choi, inde;
 	inde = -1;
 	cin >> choi;
+	while(choi < 1 || choi > 2){
+        cout << "\nThe entered preference is not between 1 and 2.\nPlease enter your preference again: ";
+    	cin >> choi;
+    }
 	switch (choi)
 	{
 	case 1: inde = searchByTitle();

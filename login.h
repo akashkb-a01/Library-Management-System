@@ -89,7 +89,6 @@ int login()
         cout << "\nThe entered choice is not between 1 and 3.\nPlease enter your choice again: ";
         cin >> role;
     }
-    cout << role << "\n";
     switch (role)
     {
     case 1: profLogin();
@@ -156,7 +155,7 @@ void librMenu()
     int task;
     cin >> task;
     while(task < 1 || task > 17){
-        cout << "Entered task is not between given range \nPlease enter task again: ";
+        cout << "Entered task is not between 1 and 17 \nPlease enter task again: ";
         cin >> task;
     }
     char temp;
@@ -242,7 +241,8 @@ void userMenu(vector <T> lis, int inde){
     case 1: displayUser(); cout << "Enter y to go back to previous menu: "; cin >> temp; if(temp == 'y')userMenu(lis, inde);
         break;
 
-    case 2: 
+    case 2:
+        system("clear");
         lis[inde].displayUserBook(); 
         cout << "Enter y to go back to previous menu: "; 
         cin >> temp; 
@@ -250,6 +250,7 @@ void userMenu(vector <T> lis, int inde){
         break;
 
     case 3: 
+        system("clear");
         lis[inde].calculateFine(); 
         cout << "Enter y to go back to previous menu: "; 
         cin >> temp; 

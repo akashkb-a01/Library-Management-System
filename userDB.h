@@ -74,7 +74,6 @@ template <class T>
 int searchUserbyId(vector <T> lis){
     system("clear");
     string id;
-    cin >> id;
     cout << "Please enter user ID: ";
     cin >> id;
     
@@ -91,7 +90,6 @@ int searchUserbyId(vector <T> lis){
 
 void updateProf(){
     system("clear");
-    cout << "To update user details enter ID: ";
     int inde = searchUserbyId(profList);
 
     int exi = 1;
@@ -108,6 +106,10 @@ void updateProf(){
         int choi;
         string temp;
         cin >> choi ;
+        while(choi < 1 || choi > 5){
+        cout << "\nThe entered preference is not between 1 and 5.\nPlease enter your preference again: ";
+        cin >> choi;
+        }
 
         switch (choi)
         {
@@ -143,7 +145,6 @@ void updateProf(){
 
 void updateStud(){
     system("clear");
-    cout << "To update user details enter ID: ";
     int inde = searchUserbyId(studList);
 
     int exi = 1;
@@ -160,6 +161,10 @@ void updateStud(){
         int choi;
         string temp;
         cin >> choi ;
+        while(choi < 1 || choi > 5){
+        cout << "\nThe entered preference is not between 1 and 5.\nPlease enter your preference again: ";
+        cin >> choi;
+        }
 
         switch (choi)
         {
@@ -195,7 +200,6 @@ void updateStud(){
 
 void deleteUser(){
     system("clear");
-    cout << "To delete user details enter ID: ";
     int inde = searchUserbyId(profList);
     profList[inde].clearFine();
     if(inde != -1)profList.erase(profList.begin() + inde);
@@ -204,7 +208,6 @@ void deleteUser(){
 
 void deleteStud(){
     system("clear");
-    cout << "To delete user details enter ID: ";
     int inde = searchUserbyId(studList);
     studList[inde].clearFine();
     if(inde != -1)studList.erase(studList.begin() + inde);
