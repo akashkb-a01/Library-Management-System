@@ -45,4 +45,5 @@ Whereas normal users have access to these following functions
 3. Calculate Fine amount
 4. Logout 
 
-Librarian can issue book to student or clear dues using `Update Student details`, similar action can be done for Professor using option 13. Students can only issue 5 books whereas, there is no such limit for the Professor.
+Librarian can issue book to student or clear dues using `Update Student details`, similar action can be done for Professor using option 13. Students can only issue 5 books whereas, there is no such limit for the Professor. \
+THe normal users can see the list of books but it is different from that of the librarian, as they cannot see the book issuer and the due date.
