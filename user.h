@@ -92,7 +92,7 @@ class Professor: public User {
                 duedate[0] = stoi(dm);
                 duedate[1] = stoi(dd);
                 duedate[2] = stoi(dy);
-                int noOfDays = countNoOfDays(duedate,predate);
+                int noOfDays = countNoOfDays(predate,duedate);
                 if(noOfDays > 0) ans += (noOfDays * 5);
 
             }
