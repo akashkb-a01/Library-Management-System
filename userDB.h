@@ -58,7 +58,7 @@ void listStud(){
     system("clear");
     cout << "List of students\n\n";
     for(auto i=0; i< studList.size(); i++){
-        cout << "Name of student: " << studList[i].getName() << "\nID of student: " << studList[i].getId() << "\n\n";
+        cout << "Name of student: " << studList[i].getName() << "\nID of student: " << studList[i].getId() << '\n' ; studList[i].calculateFine(); studList[i].displayUserBook();
     }
 }
 
@@ -66,7 +66,7 @@ void listProf(){
     system("clear");
     cout << "List of professors\n\n";
     for(auto i=0; i< profList.size(); i++){
-        cout << "Name of professor: " << profList[i].getName() << "\nID of professor: " << profList[i].getId() << "\n\n";
+        cout << "Name of professor: " << profList[i].getName() << "\nID of professor: " << profList[i].getId() << '\n' ; profList[i].calculateFine(); profList[i].displayUserBook();
     }
 }
 

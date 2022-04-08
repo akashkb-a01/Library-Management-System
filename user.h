@@ -69,7 +69,7 @@ class Professor: public User {
         }
         
         int calculateFine(){
-            system("clear");
+            //system("clear");
             int ans = 0;
             char s[11];
             time_t t = time(0);
@@ -83,6 +83,8 @@ class Professor: public User {
             predate[2] = stoi(py);
             for(auto i=0; i < userBookList.size(); i++){
                 string nd = userBookList[i].getDueDate();
+                char s[11];
+                strcpy(s, nd.c_str());
                 char *dm = strtok(s,"/") ; 
                 char *dd = strtok(NULL,"/") ;
                 char *dy = strtok(NULL,"/") ;
@@ -103,16 +105,19 @@ class Professor: public User {
         }
 
         void clearFine(){
-            for(auto i = 0; i< userBookList.size(); i++){
-                userBookList[i].setAvailibility(1);
-                userBookList[i].setIssuer("");
-                userBookList[i].setDueDate("");
+            for(auto i = 0; i< list_of_books.size(); i++){
+                if(getId() == list_of_books[i].getIssuer()){
+                    list_of_books[i].setAvailibility(true);
+                    list_of_books[i].setIssuer("");
+                    list_of_books[i].setDueDate("");
+                }
             }
             userBookList.clear();
             Fine_amount = 0;
         }
 
         void displayUserBook(){
+            cout << "\n\nList of books issued by user\n\n";
             for(auto i = 0; i < userBookList.size(); i++){
                 cout << "Title: " << list_of_books[i].getTitle() << '\n' << "Author: " << list_of_books[i].getAuthor() << '\n' << "ISBN: " << list_of_books[i].getISBN() << '\n' << "Publication: " << list_of_books[i].getPublication() << "\n\n";
             }
@@ -163,7 +168,7 @@ class Student: public User {
         }
 
         int calculateFine(){
-            system("clear");
+            //system("clear");
             int ans = 0;
             char s[11];
             time_t t = time(0);
@@ -177,8 +182,11 @@ class Student: public User {
             predate[2] = stoi(py);
             
             for(auto i=0; i < userBookList.size(); i++){
-                cout << "k";
+                //cout << "k";
+                //if(getId() == list_of_books[i].getIssuer()){
                 string nd = userBookList[i].getDueDate();
+                char s[11];
+                strcpy(s, nd.c_str());
                 char *dm = strtok(s,"/") ; 
                 char *dd = strtok(NULL,"/") ;
                 char *dy = strtok(NULL,"/") ;
@@ -186,7 +194,7 @@ class Student: public User {
                 duedate[1] = stoi(dm);
                 duedate[0] = stoi(dd);
                 duedate[2] = stoi(dy);
-                int noOfDays = countNoOfDays(duedate,predate);
+                int noOfDays = countNoOfDays(predate,duedate);
                 if(noOfDays > 0) ans += (noOfDays * 2);
 
             }
@@ -200,10 +208,12 @@ class Student: public User {
         }
 
         void clearFine(){
-            for(auto i = 0; i< userBookList.size(); i++){
-                userBookList[i].setAvailibility(1);
-                userBookList[i].setIssuer("");
-                userBookList[i].setDueDate("");
+            for(auto i = 0; i< list_of_books.size(); i++){
+                if(getId() == list_of_books[i].getIssuer()){
+                    list_of_books[i].setAvailibility(true);
+                    list_of_books[i].setIssuer("");
+                    list_of_books[i].setDueDate("");
+                }
             }
             userBookList.clear();
             Fine_amount = 0;
